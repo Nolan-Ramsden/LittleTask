@@ -7,6 +7,7 @@
     <PackageProjectUrl>https://github.com/Nolan-Ramsden/LittleTask</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Nolan-Ramsden/LittleTask</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

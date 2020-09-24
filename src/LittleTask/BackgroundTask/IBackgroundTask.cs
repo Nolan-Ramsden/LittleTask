@@ -10,6 +10,6 @@ namespace LittleTask
         TimeSpan Delay { get; }
 
         // The implementation of the task.
-        Task ExecuteAsync(CancellationToken stoppingToken);
+        Task Execute(CancellationToken stoppingToken);
     }
 }

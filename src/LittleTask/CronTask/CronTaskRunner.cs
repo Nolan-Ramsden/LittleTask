@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Cronos;
@@ -40,7 +39,7 @@ namespace LittleTask
 
                     try
                     {
-                        await bgCron.ExecuteAsync(stoppingToken);
+                        await bgCron.Execute(stoppingToken);
                     }
                     catch (TaskCanceledException)
                     {

@@ -28,7 +28,7 @@ namespace LittleTask
                     var bgTask = scope.ServiceProvider.GetRequiredService<TBackgroundTask>();
                     try
                     {
-                        await bgTask.ExecuteAsync(stoppingToken);
+                        await bgTask.Execute(stoppingToken);
                     }
                     catch (TaskCanceledException)
                     {

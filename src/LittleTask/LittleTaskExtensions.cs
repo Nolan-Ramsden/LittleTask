@@ -15,5 +15,22 @@ namespace LittleTask
         {
             return services.AddHostedService<CronTaskRunner<TCronTask>>();
         }
+
+
+        public static IServiceCollection AddBootstrapTask<TBootstrapTask>(this IServiceCollection services)
+            where TBootstrapTask : class, IBootstrapTask
+        {
+            return services.AddTransient<IBootstrapTask, TBootstrapTask>();
+        }
+
+        public static void RunBootstrap(this IServiceCollection services)
+        {
+            services.AddSingleton<BootstrapRunner>();
+            using (var scope = services.BuildServiceProvider().CreateScope())
+            {
+                var runner = scope.ServiceProvider.GetRequiredService<BootstrapRunner>();
+                runner.Run();
+            }
+        }
     }
 }

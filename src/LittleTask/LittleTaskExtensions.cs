@@ -25,7 +25,7 @@ namespace LittleTask
 
         public static void RunBootstrap(this IServiceCollection services)
         {
-            services.AddSingleton<BootstrapRunner>();
+            services.AddTransient<BootstrapRunner>();
             using (var scope = services.BuildServiceProvider().CreateScope())
             {
                 var runner = scope.ServiceProvider.GetRequiredService<BootstrapRunner>();

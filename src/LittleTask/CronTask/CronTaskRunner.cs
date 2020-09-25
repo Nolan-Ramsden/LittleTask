@@ -43,7 +43,8 @@ namespace LittleTask
                     }
                     catch (TaskCanceledException)
                     {
-                        throw;
+                        this.Logger.LogTrace("Task cancelled.");
+                        return;
                     }
                     catch (Exception e)
                     {

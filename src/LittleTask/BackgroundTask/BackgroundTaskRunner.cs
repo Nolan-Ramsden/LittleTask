@@ -28,6 +28,7 @@ namespace LittleTask
                     var bgTask = scope.ServiceProvider.GetRequiredService<TBackgroundTask>();
                     try
                     {
+                        await Task.Delay(bgTask.Delay, stoppingToken);
                         await bgTask.Execute(stoppingToken);
                     }
                     catch (TaskCanceledException)
